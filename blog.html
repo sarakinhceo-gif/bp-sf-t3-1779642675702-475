@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>블로그 | 서버 웜업 - 백링크 대행의 진실</title>
+    <meta name="description" content="백링크 대행, 찍먹은 그만. 서버 웜업 팀이 직접 굴리는 PBN의 내부를 까발린다. 네온 보이드의 거친 맛, 지금 바로 010-6279-0862로 덤벼라.">
+    <meta name="keywords" content="백링크 대행, PBN 백링크, 서버 웜업, 마포 백링크, 백링크 대행 사이트, 블로그, 네온 보이드, 스트리트 브루탈리즘">
+    <meta name="bpaas-design-system" content="brutalist-avantgarde">
+    <meta name="bpaas-design-theme" content="kr-neon-void">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://sf-t3-1779642675702-475.pages.dev/blog">
+    <meta property="og:title" content="백링크 대행의 진실 | 서버 웜업 블로그">
+    <meta property="og:description" content="PBN 백링크, 서버 웜업 팀이 직접 말한다. 네온 보이드의 거친 맛을 원한다면 010-6279-0862로 덤벼라.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sf-t3-1779642675702-475.pages.dev/blog">
+    <meta property="og:image" content="https://sf-t3-1779642675702-475.pages.dev/og-image.jpg">
+    <meta property="og:locale" content="ko_KR">
+    <meta name="twitter:card" content="summary_large_image">
+    <style>
+        /* RESET & BASE */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+            -webkit-text-size-adjust: 100%;
+        }
+        body {
+            font-family: 'Space Grotesk', 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0b0b0e;
+            color: #e0e0e0;
+            line-height: 1.7;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        /* TYPOGRAPHY */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            color: #f5f5f5;
+            text-transform: uppercase;
+        }
+        h1 {
+            font-size: clamp(2.2rem, 8vw, 4.5rem);
+            margin-bottom: 0.5em;
+            border-left: 8px solid #ff0055;
+            padding-left: 0.4em;
+        }
+        h2 {
+            font-size: clamp(1.8rem, 5vw, 2.8rem);
+            margin-bottom: 0.7em;
+            border-bottom: 3px solid #00f0ff;
+            padding-bottom: 0.2em;
+            display: inline-block;
+        }
+        h3 {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            margin-bottom: 0.6em;
+            color: #ff0055;
+        }
+        p, li, blockquote {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #c0c0c0;
+        }
+        a {
+            color: #00f0ff;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.2s, background 0.2s;
+            border-bottom: 2px solid transparent;
+        }
+        a:hover {
+            color: #ff0055;
+            border-bottom-color: currentColor;
+            background: rgba(255, 0, 85, 0.1);
+        }
+        /* LAYOUT - full bleed, airy */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        section {
+            padding: 4rem 0;
+        }
+        .section-gap {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2.5rem;
+        }
+        @media (max-width: 768px) {
+            .grid-2 {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            section {
+                padding: 3rem 0;
+            }
+            .section-gap {
+                padding-top: 4rem;
+                padding-bottom: 4rem;
+            }
+        }
+        /* NAVIGATION */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background: rgba(11, 11, 14, 0.95);
+            backdrop-filter: blur(12px);
+            border-bottom: 2px solid #ff0055;
+            padding: 0.8rem 0;
+        }
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-brand {
+            font-size: 1.4rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #00f0ff;
+            letter-spacing: 0.1em;
+            border: none;
+        }
+        .nav-brand:hover {
+            color: #ff0055;
+            background: none;
+            border: none;
+        }
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            align-items: center;
+        }
+        .nav-links a {
+            font-size: 0.95rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #e0e0e0;
+            border: none;
+            padding: 0.3rem 0;
+        }
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: #ff0055;
+            border-bottom: 3px solid #00f0ff;
+        }
+        .hamburger-menu {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+            padding: 4px;
+        }
+        .hamburger-menu span {
+            display: block;
+            width: 28px;
+            height: 3px;
+            background: #f5f5f5;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                background: rgba(11, 11, 14, 0.98);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1.5rem 2rem;
+                gap: 1rem;
+                border-bottom: 3px solid #00f0ff;
+            }
+            .nav-links.open {
+                display: flex;
+            }
+            .hamburger-menu {
+                display: flex;
+            }
+        }
+        .tel-link {
+            color: #00f0ff;
+            font-weight: 700;
+            font-size: 1.1rem;
+            letter-spacing: 0.1em;
+            border: 2px solid #ff0055;
+            padding: 0.4rem 1.2rem;
+            border-radius: 0;
+            transition: 0.2s;
+            white-space: nowrap;
+        }
+        .tel-link:hover {
+            background: #ff0055;
+            color: #0b0b0e;
+            border-color: #ff0055;
+        }
+        /* HERO */
+        .hero {
+            min-height: 60vh;
+            display: flex;
+            align-items: center;
+            background: radial-gradient(ellipse at 20% 50%, #1a1a2e 0%, #0b0b0e 70%);
+            border-bottom: 3px solid #ff0055;
+            padding-top: 6rem;
+        }
+        .hero h1 {
+            border-left-color: #00f0ff;
+        }
+        .hero .subhead {
+            font-size: 1.2rem;
+            color: #ff0055;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            margin-bottom: 1.5rem;
+        }
+        .hero .meta {
+            font-size: 0.9rem;
+            color: #888;
+            margin-top: 2rem;
+        }
+        /* CONTENT CARD / ARTICLE */
+        .article-body {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .article-body p {
+            margin-bottom: 1.8rem;
+        }
+        .article-body blockquote {
+            border-left: 6px solid #ff0055;
+            padding: 1.2rem 2rem;
+            margin: 2rem 0;
+            background: rgba(255, 0, 85, 0.05);
+            font-style: italic;
+            font-size: 1.1rem;
+        }
+        .highlight-box {
+            background: rgba(0, 240, 255, 0.08);
+            border: 2px solid #00f0ff;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        .highlight-box h3 {
+            margin-bottom: 0.3rem;
+        }
+        /* FAQ */
+        .faq-list {
+            display: grid;
+            gap: 1.2rem;
+        }
+        .faq-item {
+            border: 1px solid #2a2a3a;
+            padding: 1.5rem;
+            transition: 0.2s;
+        }
+        .faq-item:hover {
+            border-color: #ff0055;
+            background: rgba(255, 0, 85, 0.03);
+        }
+        .faq-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: #00f0ff;
+        }
+        .faq-item p {
+            margin-bottom: 0;
+        }
+        /* FOOTER */
+        footer {
+            border-top: 3px solid #00f0ff;
+            padding: 3rem 0 2rem;
+            text-align: center;
+            color: #666;
+        }
+        footer a {
+            color: #ff0055;
+            border: none;
+        }
+        footer a:hover {
+            background: none;
+            text-decoration: underline;
+        }
+        /* UTILITY */
+        .text-neon {
+            color: #00f0ff;
+        }
+        .text-pink {
+            color: #ff0055;
+        }
+        .btn-cta {
+            display: inline-block;
+            background: #ff0055;
+            color: #0b0b0e;
+            font-weight: 800;
+            text-transform: uppercase;
+            padding: 0.8rem 2.5rem;
+            border: 2px solid #ff0055;
+            letter-spacing: 0.1em;
+            transition: 0.2s;
+            margin-top: 1rem;
+            border: none;
+        }
+        .btn-cta:hover {
+            background: #00f0ff;
+            color: #0b0b0e;
+            border-color: #00f0ff;
+        }
+        /* RESPONSIVE 768 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .hero .subhead {
+                font-size: 1rem;
+            }
+            .article-body {
+                padding: 0 0.5rem;
+            }
+            .highlight-box {
+                padding: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 네비게이션 (공통) -->
+    <nav>
+        <div class="container">
+            <a href="/" class="nav-brand">서버 웜업</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="/">홈</a></li>
+                <li><a href="/about">어바웃</a></li>
+                <li><a href="/services">서비스</a></li>
+                <li><a href="/blog" class="active">블로그
+</body>
+</html>
